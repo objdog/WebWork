@@ -1,5 +1,5 @@
-#jQuery Lecture notes
-##What is jQuery
+# jQuery Lecture notes
+## What is jQuery
 A DOM manipulation library. (Write less, do more)
 It helps us manipulate the DOM.
 --
@@ -7,17 +7,17 @@ jQuery is a fast, small, and feature-rich javascript library. It makes things li
 
 It can help us select, manipulate, and create elements. Add event listeners, animate elements, add effects and make HTTP requests(AJAX)
 
-##What is a library
+## What is a library
 The core idea is to take code that someone else wrote and include it in our code.
 
 A single file with a bunch of methods and properties in it that we can use.
-##Why would you use jQuery
+## Why would you use jQuery
 It fixes "broken" DOM API. Historically developers considered the built in API to be broken.
 
 It clarifies your code and makes it shorter. It's easy to use and supports multiple browsers.
 Built in AJAX support.
 Lots of folks use it so it can't suck right? There's a big community out there and tons of places to find resources to help the developer.
-##Why would you not use jQuery
+## Why would you not use jQuery
 The DOM API isn't really broken anymore. It has been continuously developed and improved.
 
 It doesn't do anything that you can't do without it. It can be an unnecessary dependency depending on what your application is.
