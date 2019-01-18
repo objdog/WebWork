@@ -105,3 +105,4 @@ function randomColor() {
   //concatenate the rgb statement and return
   return "rgb("+ red + ", " + green + ", " + blue + ")";
 }
+//test
