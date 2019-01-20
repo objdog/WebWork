@@ -1,0 +1,23 @@
+body {
+	background: pink;
+	/*	background-repeat: no-repeat;
+	background-size: cover;*/
+}
+h1 {
+	color: rgb(200,0,100);
+/*	border-color: red;
+	border-width: 5px;
+	border-style: dashed;*/
+	border: 8px red dashed;
+}
+
+li {
+	color: green;
+}
+
+h4 {
+	background: salmon;
+}
+div {
+	background: blue;
+}

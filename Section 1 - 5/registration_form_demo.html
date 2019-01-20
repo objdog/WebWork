@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+</head>
+<body>
+<h1>Register</h1>
+<form>
+	<label>
+		First Name:
+		<input type="text" name="first_name" placeholder="John" required>
+	</label>
+	<label>
+		Last Name:
+		<input type="text" name="last_name" placeholder="Smith" required>
+	</label>
+	<br>
+	<label for="MALE">Male:</label>
+		<input type="radio" name="genderChoice" value="male" id="MALE">
+	<label for="FEMALE">Female:</label>
+		<input type="radio" name="genderChoice" value="female" id="FEMALE">
+	<label for="OTHER">Other:</label>
+		<input type="radio" name="genderChoice" value="other" id="OTHER">
+	<label>
+	<br>
+		Email:
+		<input type="email" name="email" placeholder="your email" required>
+	</label>
+	<label>
+		Password:
+		<input type="password" name="password" placeholder="Password" autocomplete="new-password" pattern=".{5,10}" title="5 tp 10 characters" required>
+	</label>
+	<br>
+	<label>
+		Birthday:
+		<select name="month" placeholder="Month" required>
+			<option>January</option>
+			<option>February</option>
+			<option>March</option>
+			<option>April</option>
+			<option>May</option>
+			<option>June</option>
+			<option>July</option>
+			<option>August</option>
+			<option>September</option>
+			<option>October</option>
+			<option>November</option>
+			<option>December</option>
+		</select>
+		<select name="day" placeholder="Day" required>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+			<option>11</option>
+			<option>12</option>
+		</select>
+		<select name="year" placeholder="year" required>
+			<option>1980</option>
+			<option>1981</option>
+			<option>1982</option>
+			<option>1983</option>
+			<option>1984</option>
+			<option>1985</option>
+			<option>1986</option>
+			<option>1987</option>
+			<option>1988</option>
+			<option>1989</option>
+			<option>1990</option>
+			<option>1991</option>
+		</select>
+	</label>
+	<p>I agree to the terms and conditions.<input type="checkbox" name="i_do" required></p>
+	<input type="submit">
+</form>
+
+</body>
+</html>
