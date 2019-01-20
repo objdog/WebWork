@@ -30,3 +30,6 @@ Lots of people are moving away from jQuery... so the community might get smaller
 He used to teach DOM manipulation exclusively through the context of jQuery. Over time he had more and more students come to him and tell him that their employers weren't using jQuery and that they had to quickly figure out how to do the same tasks in 'vanilla' JavaScript.
 
 So he changed his method and started teaching 'vanilla' first, and then moving into jQuery. He noticed that his students seemed to have a better understanding of DOM manipulation theory.
+
+### Additional Notes:
+There are several useful methods included in jQuery. The ones that Colt spent the most time talking about was Attr and Val. From what I can tell, each is very similar with the exception that Attr works on HTML attributes (those additional descriptors inside the tag) and val works on the actual value of items (such as what option is selected, or what is written inside a text box.)
