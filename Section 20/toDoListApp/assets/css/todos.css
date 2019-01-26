@@ -3,7 +3,6 @@ body {
   background: #2BC0E4;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 h1 {
   background-color: #2980b9;
@@ -32,20 +31,30 @@ input {
   padding: 13px 13px 13px 20px;
   box-sizing: border-box;
   color: #2980b9;
+  border: 0px solid rgba(0,0,0,0);
+}
+li span {
+  background-color: red;
+  color: white;
+  height: 40px;
+  width: 0px;
+  display: inline-block;
+  text-align: center;
+  opacity: 0;
+  transition: 0.2s linear;
+  margin-right: 20px;
 }
 li:nth-child(2n) {
   background-color: #f7f7f7;
+}
+li:hover span {
+  width: 40px;
+  opacity: 1.0;
 }
 input:focus {
   background-color: white;
   border: 3px solid #2980b9;
   outline: none;
-}
-#container {
-  box-shadow: 0 0 3px rgba(0,0,0, 0.1);
-  width: 360px;
-  margin: 100px auto;
-  background-color: #f7f7f7;
 }
 .complete {
   color: gray;
@@ -53,4 +62,10 @@ input:focus {
 }
 .fa-pencil-alt {
   float: right;
+}
+#container {
+  box-shadow: 0 0 3px rgba(0,0,0, 0.1);
+  width: 360px;
+  margin: 100px auto;
+  background-color: #f7f7f7;
 }

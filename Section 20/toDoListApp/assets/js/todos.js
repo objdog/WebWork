@@ -9,6 +9,10 @@ $("ul").on("click", "span", function(event) {
   })
   event.stopPropagation();
 });
+//Hide the input when the pencil icon is clicked
+$("#edit").on("click", function() {
+  $("input[type='text']").slideToggle();
+});
 
 $("input[type='text']").keypress(function(event){
   if (event.which === 13) {
