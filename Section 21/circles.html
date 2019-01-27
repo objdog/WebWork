@@ -13,13 +13,19 @@
       var maxY = canvas.height;
       var counterX = 0;
       var counterY = 0;
-      while (counterX < maxX && counterY < maxY) {
-        var myCircle = new Path.Circle(new Point(counterX, counterY), 5);
-        myCircle.fillColor = new Color(Math.random(), Math.random(), Math.random()) ;
-        counterX += 50;
-        if (counterX >= maxX) {
-          counterX = 0
-          counterY += 50
+      // while (counterX < maxX && counterY < maxY) {
+      //   var myCircle = new Path.Circle(new Point(counterX, counterY), 5);
+      //   myCircle.fillColor = new Color(Math.random(), Math.random(), Math.random()) ;
+      //   counterX += 50;
+      //   if (counterX >= maxX) {
+      //     counterX = 0
+      //     counterY += 50
+      //   }
+      // }
+      for (var x = 0; x <= maxX; x += 50) {
+        for (var y = 0; y <= maxY; y += 50) {
+          var myCircle = new Path.Circle(new Point(x, y), 5);
+          myCircle.fillColor = new Color(Math.random(), Math.random(), Math.random());
         }
       }
     </script>
