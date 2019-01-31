@@ -14,14 +14,12 @@ function animalSays(animal){
   }
 };
 
-
-
 app.get("/", function(req, res){
    res.send("Hi there, welcome to my assignment!"); 
 });
 
 app.get("/speak/:animal", function(req, res){
-    var animal = req.params.animal;
+    var animal = req.params.animal.toLowerCase();
     res.send("The " + animal + " says " + animalSays(animal));
 });
 
