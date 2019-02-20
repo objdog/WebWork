@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <title>RESTful Routes</title>
+        <style>
+            html {
+                margin-top: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron" id="#jumbo">
+              <h1 class="display-4">RESTful Routes</h1>
+              <p class="lead">A table of all 7 RESTful Routes</p>
+              <hr class="my-4">
+              <p>This is just my note page on RESTful routes. For more information... <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">Learn more</a>
+            </div>
+            
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Path</th>
+                        <th scope="col">HTTP</th>
+                        <th scope="col">Purpose</th>
+                        <th scope="col">Mongoose Method</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Index</td>
+                        <td>/things</td>
+                        <td>GET</td>
+                        <td>List all things</td>
+                        <td>Thing.find()</td>
+                    </tr>
+                    <tr class="table-success">
+                        <td>New</td>
+                        <td>/things/new</td>
+                        <td>GET</td>
+                        <td>Shows a form to create a new thing</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr class="table-success">
+                        <td>Create</td>
+                        <td>/things</td>
+                        <td>POST</td>
+                        <td>Creates a new thing, then redirect somewhere</td>
+                        <td>Thing.create()</td>
+                    </tr>
+                    <tr class="table-primary">
+                        <td>Show</td>
+                        <td>/things/:id</td>
+                        <td>GET</td>
+                        <td>Show info about one specific thing</td>
+                        <td>Thing.findById()</td>
+                    </tr>
+                    <tr class="table-warning">
+                        <td>Edit</td>
+                        <td>/things/:id/edit</td>
+                        <td>GET</td>
+                        <td>Show edit form for a particular thing</td>
+                        <td>Thing.findById()</td>
+                    </tr>
+                    <tr class="table-warning">
+                        <td>Update</td>
+                        <td>/things/:id</td>
+                        <td>PUT</td>
+                        <td>Update a particular thing, then redirect somewhere</td>
+                        <td>Thing.findByIdAndUpdate()</td>
+                    </tr>
+                    <tr class="table-danger">
+                        <td>Destroy</td>
+                        <td>/things/:id</td>
+                        <td>DELETE</td>
+                        <td>Delete a particular thing, then redirect somewhere</td>
+                        <td>Thing.findByIdAndRemove()</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
