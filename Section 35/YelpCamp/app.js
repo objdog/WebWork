@@ -8,7 +8,7 @@ var express       = require("express"),
     mongoose      = require('mongoose'),
     Campground    = require('./models/campground'),
     Comment       = require("./models/comment"),
-    seedDB        = require('./seeds'),
+    // seedDB        = require('./seeds'),
     passport      = require('passport'),
     LocalStrategy = require("passport-local"),
     User          = require("./models/user");
@@ -26,7 +26,7 @@ var commentRoutes   = require("./routes/comments"),
 // HOUSEKEEPING //
 //==============//
 
-seedDB();
+// seedDB(); //Seeds the database with some test data.
 mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser: true });
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
