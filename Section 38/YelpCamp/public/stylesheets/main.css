@@ -10,3 +10,11 @@
     display: inline;
 }
 
+.input-form {
+     width: 30%; 
+     margin: 25px auto;
+}
+
+.form-title {
+    text-align: center;
+}

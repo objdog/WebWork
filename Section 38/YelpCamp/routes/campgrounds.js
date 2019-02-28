@@ -1,8 +1,8 @@
-var express = require('express');
-var router = express.Router();
-var middleware = require('../middleware');
-var Campground = require("../models/campground");
-var Comment = require("../models/campground");
+const express = require('express');
+const router = express.Router();
+const middleware = require('../middleware');
+const Campground = require("../models/campground");
+const Comment = require("../models/campground");
 //==================
 // CAMPGROUND ROUTES
 //==================
@@ -70,11 +70,12 @@ router.post('/', middleware.isLoggedIn, function(req, res){
    var name = req.body.name;
    var image = req.body.image;
    var description = req.body.description;
+   var cost = req.body.cost;
    var author = {
        id: req.user.id,
        username:req.user.username
    };
-   var newCampground = {name: name, image: image, description: description, author: author};
+   var newCampground = {name: name, image: image, description: description, cost: cost, author: author};
    
    Campground.create(newCampground, function(err, newlyCreated){
        if(err){

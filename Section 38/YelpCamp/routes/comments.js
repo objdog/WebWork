@@ -1,8 +1,8 @@
-var express = require("express");
-var router = express.Router({mergeParams: true});
-var Campground = require("../models/campground");
-var Comment = require("../models/comment");
-var middleware =  require('../middleware');
+const express = require("express");
+const router = express.Router({mergeParams: true});
+const Campground = require("../models/campground");
+const Comment = require("../models/comment");
+const middleware =  require('../middleware');
 //================
 // COMMENTS ROUTES
 //================
@@ -73,7 +73,14 @@ router.put("/:comment_id", middleware.checkCommentOwnership, function(req, res){
 //-- DESTROY ROUTE
 
 router.delete("/:comment_id", middleware.checkCommentOwnership, function(req, res){
-    
+    Comment.findByIdAndRemove(req.params.comment_id, function(err){
+        if(err){
+            console.log(err);
+            res.redirect('/campgrounds');
+        } else {
+            res.redirect('/campgrounds/' + req.params.id);
+        }
+    });
 });
 
 
