@@ -18,3 +18,20 @@
 .form-title {
     text-align: center;
 }
+
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.bs-callout-success {
+    border-left-color: #5cb85c;
+}
+
+#review-pane {
+    display: none;
+};

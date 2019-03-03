@@ -3,10 +3,18 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <p class="lead">YelpCamp</p>
+            <p class="lead">Campground Info</p>
             <div class="list-group">
                 <li class="list-group-item active">Info 1</li>
-                <li class="list-group-item">Info 2</li>
+                <li class="list-group-item"><div id='map' style='width: 230px; height: 230px;'></div>
+                    <script>
+                      mapboxgl.accessToken = 'pk.eyJ1IjoiZWRhZGFtcyIsImEiOiJjanN0aG5iODEyM3R6NDR0OXM0Z2JjeWM3In0.VGIgRcyQT4IBU7WolUJDpg';
+                      var map = new mapboxgl.Map({
+                        container: 'map',
+                        style: 'mapbox://styles/mapbox/streets-v11'
+                      });
+                    </script>
+                </li>
                 <li class="list-group-item">Info 3</li>
             </div>
         </div>
@@ -32,7 +40,19 @@
             </div>
                     <div class="well">
                         <div class="text-right">
-                             <a class="btn btn-primary btn-sm" href="/campgrounds/<%= campground._id %>/comments/new">Comment</a> 
+                             <button class="btn btn-primary btn-sm" id="review-button">Review</button> 
+                             <!-- <a class="btn btn-primary btn-sm" href="/campgrounds/<%= campground._id %>/comments/new" id="review-button">Review</a>  -->
+                        </div>
+                        <div class="bs-callout bs-callout-success" id="review-pane">
+                            <h4>Add a review.</h4>
+                            <form action="/campgrounds/<%= campground._id %>/comments" method="POST">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" placeholder="text" name="comment[text]">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-lg btn-primary btn-sm">Add Review!</button>
+                                </div>
+                            </form>
                         </div>
                         <hr>
                         <% campground.comments.forEach(function(comment){ %>
