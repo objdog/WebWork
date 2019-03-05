@@ -6,15 +6,7 @@
             <p class="lead">Campground Info</p>
             <div class="list-group">
                 <li class="list-group-item active">Info 1</li>
-                <li class="list-group-item"><div id='map' style='width: 230px; height: 230px;'></div>
-                    <script>
-                      mapboxgl.accessToken = 'pk.eyJ1IjoiZWRhZGFtcyIsImEiOiJjanN0aG5iODEyM3R6NDR0OXM0Z2JjeWM3In0.VGIgRcyQT4IBU7WolUJDpg';
-                      var map = new mapboxgl.Map({
-                        container: 'map',
-                        style: 'mapbox://styles/mapbox/streets-v11'
-                      });
-                    </script>
-                </li>
+                <li class="list-group-item">Info 2</li>
                 <li class="list-group-item">Info 3</li>
             </div>
         </div>
@@ -44,7 +36,21 @@
                              <!-- <a class="btn btn-primary btn-sm" href="/campgrounds/<%= campground._id %>/comments/new" id="review-button">Review</a>  -->
                         </div>
                         <div class="bs-callout bs-callout-success" id="review-pane">
-                            <h4>Add a review.</h4>
+                            <!-- I acknowledge this is a hot mess and not the best way to do this but bear with -->
+                            <% var userHasReviewed = false; %>
+                            <% var userAuthorName = ""; %>
+                            <% var userReview = ""; %>
+                            <% var userCommentID = ""; %>
+                            <% campground.comments.forEach(function(comment){ %>
+                                <% if (currentUser && comment.author.id.equals(currentUser._id)){ %>
+                                    <% userHasReviewed = true; %>
+                                    <% userAuthorName = comment.author.username; %>
+                                    <% userReview = comment.text %>
+                                    <% userCommentID = comment._id %>
+                                <% } %>
+                            <% }); %>
+                            <% if (!userHasReviewed){ %>
+                            <h4>Add a review. <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4>
                             <form action="/campgrounds/<%= campground._id %>/comments" method="POST">
                                 <div class="form-group">
                                     <input class="form-control" type="text" placeholder="text" name="comment[text]">
@@ -53,6 +59,21 @@
                                     <button class="btn btn-lg btn-primary btn-sm">Add Review!</button>
                                 </div>
                             </form>
+                            <% } else { %>
+                            <h4>Edit your review. <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4> 
+                            <form action="/campgrounds/<%= campground._id %>/comments/<%= userCommentID %>?_method=PUT" method="POST">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" value="<%= userReview %>" name="comment[text]">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-sm btn-primary">Submit!</button>
+                                
+                                    <form class="delete-form" action="/campgrounds/<%= campground._id %>/comments/<%= userCommentID %>?_method=DELETE" method="POST">
+                                        <input type="submit" class="btn btn-sm btn-danger" value="Delete">
+                                    </form>
+                                </div>
+                            </form>
+                            <% } %> 
                         </div>
                         <hr>
                         <% campground.comments.forEach(function(comment){ %>
@@ -63,7 +84,7 @@
                                     <p>
                                         <%= comment.text %>
                                     </p>
-                                    <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+                                    <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
                                     <a class="btn btn-xs btn-warning" href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit">Edit</a>
                                     <form class="delete-form" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
                                         <input type="submit" class="btn btn-xs btn-danger" value="Delete">
