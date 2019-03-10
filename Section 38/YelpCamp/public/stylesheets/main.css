@@ -32,6 +32,10 @@
     border-left-color: #5cb85c;
 }
 
+.userComment {
+    color: green;
+}
+
 #review-pane {
     display: none;
 }
