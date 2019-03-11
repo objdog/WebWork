@@ -36,6 +36,20 @@
     color: green;
 }
 
+.delete {
+     background:none!important;
+     border:none; 
+     padding: 5px !important;
+     font: inherit;
+     /*border is optional*/
+     cursor: pointer;
+     border: 1px solid transparent;
+}
+
+.delete:hover {
+    border: 1px solid #dc3545;
+}
+
 #review-pane {
     display: none;
 }
